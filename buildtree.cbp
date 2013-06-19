@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="buildtree" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/buildtree" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="/home/mtu/buildtree/buildtree/" />
+					<Add directory="../../../../usr/local/boost_1_49_0" />
+				</Compiler>
+				<Linker>
+					<Add library="../../../../usr/lib/libboost_regex.so" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/buildtree" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Common.h" />
+		<Unit filename="FeatureForBuild.cpp" />
+		<Unit filename="FeatureForBuild.h" />
+		<Unit filename="HeadWord.h" />
+		<Unit filename="SegScore.cpp" />
+		<Unit filename="SegScore.h" />
+		<Unit filename="SynTreePT.cpp" />
+		<Unit filename="SynTreePT.h" />
+		<Unit filename="SynTreeSQ.cpp" />
+		<Unit filename="SynTreeSQ.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="mytoolbox.cpp" />
+		<Unit filename="mytoolbox.h" />
+		<Unit filename="testtmp.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
