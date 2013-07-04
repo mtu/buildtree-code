@@ -80,14 +80,17 @@ void TestPro(const char*purefile,const char* synfile, const char* segfile,const 
     SegScore lbObj1(lbMEModel1);
     while(getline(in,l) && getline(in1,l1) && getline(in2,l2) )
     {
+        cerr<<count<<endl;
         if(count++<0)continue;
+
+        if(l1=="(())"){cout<<l<<endl;continue;}
         FeatureForBuild obj;
         if(obj.TestingProcess(l,l2,l1,strObj,lbObj,lbObj1)==-1){
             copy(obj.myRelTree->sentenceVec.begin(),obj.myRelTree->sentenceVec.end(),ostream_iterator<string,char>(cout," "));
             cout<<endl;continue;}
        // else {}
         obj.ClearAll();
-        cerr<<count<<endl;
+
     }
 }
 void evaluationforstr(const char* canfile,const char*reffile)
@@ -200,21 +203,21 @@ void binary2Nonbinary(const char*relfile)
 int main(int argc, char*argv[])
 {
   //test(argv[1]);
-//  argv[1]="/home/mtu/buildtree/buildtree/bin/Debug/exp1/News.test.pure";
-//  argv[2]="/home/mtu/buildtree/buildtree/bin/Debug/exp1/News.test.ber";
-//  argv[3]="/home/mtu/buildtree/buildtree/bin/Debug/exp1/news.posfile-test"; //[BL [0: abc/pos ddd/pos ]]
+//  argv[1]="/home/mtu/buildtree/buildtree/bin/Debug/nist/nist05utf8ref.all";
+//  argv[2]="/home/mtu/buildtree/buildtree/bin/Debug/nist/nist05utf8ref.parse";
+//  argv[3]="/home/mtu/buildtree/buildtree/bin/Debug/nist/nist05.seg"; //[BL [0: abc/pos ddd/pos ]]
  //argv[3]="/home/mtu/buildtree/buildtree/bin/Debug/exp1/News.trainout.2";
-// argv[4]="/home/mtu/buildtree/buildtree/bin/Debug/exp1/str.m8";
-// argv[5]="/home/mtu/buildtree/buildtree/bin/Debug/exp1/lb.m1";
-// argv[6]="/home/mtu/buildtree/buildtree/bin/Debug/exp1/lb.m8";
+// argv[4]="/home/mtu/buildtree/buildtree/bin/Debug/eng/strm";
+// argv[5]="/home/mtu/buildtree/buildtree/bin/Debug/eng/lbm";
+// argv[6]="/home/mtu/buildtree/buildtree/bin/Debug/eng/lbm";
 //    argv[2]="/home/mtu/buildtree/buildtree/bin/Debug/exp1/News.testout.2";
 //    argv[1]="/home/mtu/buildtree/buildtree/bin/Debug/exp1/test.out.2";
 //    argv[2]="/home/mtu/buildtree/buildtree/bin/Debug/exp1/News.testout.1";
 //    argv[1]="/home/mtu/buildtree/buildtree/bin/Debug/exp1/non-bin.test";
-    binary2Nonbinary(argv[1]);
+ //   binary2Nonbinary(argv[1]);
 
  // test1(argv[1],argv[2],argv[3]);
- //TestPro(argv[1],argv[2],argv[3],argv[4],argv[5],argv[6]);
+ TestPro(argv[1],argv[2],argv[3],argv[4],argv[5],argv[6]);
   //binarization(argv[1]);
   //test();
  // evaluationforstr(argv[1],argv[2]);
